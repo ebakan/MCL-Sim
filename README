@@ -1,0 +1,48 @@
+This is a basic, yet robust framework for a Monte Carlo-based approach to robot localization. The program is organized as follows:
+
+gsl/
+    Select files chosen from the GSL for use in random number generation
+
+fieldmap.h
+    Dimensions of and array representing the map of the field
+
+gui.c, gui.h
+    The GLUT-based graphical user interface
+
+lookups.c, lookups.h
+    A library to generate and use lookup tables for trigonometric functions
+
+main.c
+    Setup and initialization of the program
+
+map.c, map.h
+    A library for interfacing with a bitmap
+
+mcl.c, mcl.h
+    The functions behind the MCL algorithm
+
+rand.c, rand.h
+    Wrapper functions for methods and structures from the GSL library
+
+structs.h
+    Important structures used in the algorithm
+
+
+The program exhibits extremely good performance with a very high number of particles simulated, but the following improvements hope to be made or investigated into by the authors:
+    Increase the efficiency of the laser rangefinder-simulating algorithm by reducing the number of calculations (especially trig function calls) made per particle per simulation
+    Speed up casting between floats and integers, an issue which could be solved with SSE instructions, except that the code has to be able to run on an NI cRIO.
+    Decrease the number of calls to random function generators or increase their efficiency (unlikely as the algorithms from the GSL are fairly-well optimized already)
+    Do more research on whether bitmap performance can be increased by moving from 8-bit data members to 32-bit or 64-bit chunks
+
+
+Additionally, the Makefile is currently OSX-specific because I am not quite proficient with GNU Autotools as of yet. To get the program to compile correctly on your system, change the frameworks variable in the Makefile to link to the appropriate library and if necessary change the include paths of OpenGL/GLUT.
+
+
+Other contributors, whether technical or not:
+Austin Schuh
+Eric Caldwell
+
+This software is released under the GPL "as-is" without any warranty.
+The files copied from the GSL are also released under the GPL.
+Copyright (C) 2011 by Eric Bakan.
+

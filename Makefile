@@ -11,7 +11,7 @@ all: $(TARGET)
 $(TARGET) : main.c $(DEPS)
 	    $(CC) $(LFLAGS) main.c -o $(TARGET) $(FRAMEWORKS) $(DEPS)
 
-gui.o : gui.c gui.h mcl.h structs.h
+gui.o : gui.c gui.h mcl.h structs.h fieldmap.h
 	$(CC) $(CFLAGS) $<
 
 lookups.o : lookups.c lookups.h mcl.h

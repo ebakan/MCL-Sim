@@ -20,8 +20,6 @@
 #define tanf(x) tan_lookup(x)
 #endif//USE_LOOKUPS
 
-
-
 typedef struct
 {
     float x;
