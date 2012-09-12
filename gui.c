@@ -67,6 +67,10 @@ void resetField()
 void resetMap()
 {
     clearMap(&m_fieldmap);
+    {
+	#include "fieldmap.h"
+	byteArrayToBitArray(fieldmap_bytes,m_fieldmap.width*m_fieldmap.height,m_fieldmap.data);
+    }
     glutPostRedisplay();
 }
 
