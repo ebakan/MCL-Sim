@@ -20,16 +20,15 @@
   * Dimensions of and array representing the field map
   */
 
-const uint16_t fieldwidth=8;
-const uint16_t fieldheight=8;
-uint8_t fieldmap_bytes[]={1,1,1,1,1,1,1,1,
-			  1,0,0,0,0,0,0,1,
-			  1,1,0,0,0,0,0,1,
-			  1,0,1,0,0,0,0,1,
-			  1,0,0,0,0,0,0,1,
-			  1,0,1,0,1,0,0,1,
-			  1,0,0,0,0,0,0,1,
-			  1,1,1,1,1,1,1,1};
+const uint16_t fieldwidth=7;
+const uint16_t fieldheight=7;
+uint8_t fieldmap_bytes[]={1,1,1,1,1,1,1,
+			  1,0,0,0,0,0,1,
+			  1,1,0,0,0,0,1,
+			  1,0,1,0,0,0,1,
+			  1,0,0,0,0,0,1,
+			  1,0,1,0,1,0,1,
+			  1,1,1,1,1,1,1};
 /*
 uint8_t fieldmap_bytes[]={1,1,1,1,1,1,1,
 			  1,0,0,0,0,0,1,
